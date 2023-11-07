@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import { Route, Routes } from "react-router-dom";
-import Details from "./components/DetailsPage/Details";
 import HomePage from "./components/Product/HomePage";
 
 const App = () => {
@@ -11,7 +10,6 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/details/:detailslug" element={<Details />} />
       </Routes>
     </>
   );
