@@ -20,7 +20,6 @@ export const productActionCreator = () => {
 export const bagActionCreator = (data) => {
   return (dispatch, getState) => {
     const getElectronicData = () => {
-      console.log("API is Called");
       const cartArray = getState().productReducer.cart;
       cartArray.push(data);
 
@@ -37,7 +36,6 @@ export const bagActionCreator = (data) => {
 export const wishActionCreator = (data) => {
   return (dispatch, getState) => {
     const getElectronicData = () => {
-      console.log("API is Called");
       const cartArray = getState().productReducer.wishlist;
       cartArray.push(data);
 
@@ -54,7 +52,6 @@ export const wishActionCreator = (data) => {
 export const removeWishActionCreator = (data) => {
   return (dispatch, getState) => {
     const getElectronicData = () => {
-      console.log("API is Called");
       const cartArray = getState().productReducer.wishlist;
       const newcartArray = cartArray.filter((item) => item.id !== data.id);
 
@@ -71,7 +68,6 @@ export const removeWishActionCreator = (data) => {
 export const removeBagActionCreator = (data) => {
   return (dispatch, getState) => {
     const getElectronicData = () => {
-      console.log("API is Called");
       const cartArray = getState().productReducer.cart;
       const newcartArray = cartArray.filter((item) => item.id !== data.id);
 
@@ -88,7 +84,6 @@ export const removeBagActionCreator = (data) => {
 export const filterActionCreator = (data) => {
   return (dispatch, getState) => {
     const getElectronicData = () => {
-      console.log("API is Called");
       const shirtArray = getState().productReducer.shirts;
       if (shirtArray.length === 15) {
         const newshirtArray = shirtArray.filter((item) => item.pname === data);
@@ -116,7 +111,6 @@ export const filterActionCreator = (data) => {
 export const filterCatActionCreator = (data) => {
   return (dispatch, getState) => {
     const getElectronicData = () => {
-      console.log("API is Called");
       const shirtArray = getState().productReducer.shirts;
       if (shirtArray.length === 15) {
         const newshirtArray = shirtArray.filter(
@@ -146,7 +140,6 @@ export const filterCatActionCreator = (data) => {
 export const filterGenderActionCreator = (data) => {
   return (dispatch, getState) => {
     const getElectronicData = () => {
-      console.log("API is Called");
       const shirtArray = getState().productReducer.shirts;
       if (shirtArray.length === 15) {
         const newshirtArray = shirtArray.filter((item) => item.filter === data);
@@ -174,7 +167,6 @@ export const filterGenderActionCreator = (data) => {
 export const sortActionCreator = (data) => {
   return (dispatch, getState) => {
     const getElectronicData = () => {
-      console.log("API is Called");
       const shirtArray = getState().productReducer.shirts;
 
       if (data === "lth") {
@@ -203,7 +195,6 @@ export const sortActionCreator = (data) => {
 export const searchActionCreator = (data) => {
   return (dispatch, getState) => {
     const getElectronicData = () => {
-      console.log("API is Called");
       const shirtArray = getState().productReducer.shirts;
       const lowdata = data.toLowerCase();
       const searchArray = shirtArray.filter((item) => {

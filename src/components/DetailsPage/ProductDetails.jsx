@@ -1,17 +1,12 @@
-import React, { useState } from "react";
-import Style from "./ProductDetails.css";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { bagActionCreator } from "../../ActionCreator/productActionCreator";
 import { wishActionCreator } from "../../ActionCreator/productActionCreator";
 
 const ProductDetails = (props) => {
-  const wishlistData = useSelector((storeData) => storeData.productReducer.wishlist);
   const dispatch = useDispatch();
-  const[selSize, setSelSize]= useState(null);
-  const selectSize=(value)=>{
-   console.log(value)
-  }
+
   return (
     <>
       <div className="right-details-content">
@@ -46,22 +41,17 @@ const ProductDetails = (props) => {
         <h2 className="productPrice" style={{ "text-transform": "capitalize" }}>
           {props.productPrice}/-
         </h2>
-        {
-          // console.log(props.size)
-          props.size.map((value) => {
-            return <p className="size-varient" onClick={selectSize(value)}>{value}</p>;
-          })
-        }
+        {props.size.map((value) => {
+          return <p className="size-varient">{value}</p>;
+        })}
         <br />
         <br />
         <button
           className="details-btn btn-primary"
           onClick={() => {
-            //dispatch(addToCart(props.value));
             let actionCreator = bindActionCreators(bagActionCreator, dispatch);
-            actionCreator(props.value)
-            alert("Product Added to Bag")
-            console.log(props.value)
+            actionCreator(props.value);
+            alert("Product Added to Bag");
           }}
         >
           Add to Bag
@@ -71,8 +61,8 @@ const ProductDetails = (props) => {
           className="details-btn btn-sec"
           onClick={() => {
             let actionCreator = bindActionCreators(wishActionCreator, dispatch);
-            actionCreator(props.value)
-            alert("Product Added to Wishlist")
+            actionCreator(props.value);
+            alert("Product Added to Wishlist");
           }}
         >
           Wishlist
