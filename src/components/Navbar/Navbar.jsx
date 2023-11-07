@@ -10,7 +10,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import Modal from "../Product/Modal";
-import Cart from "../Product/Cart";
 import { NavLink } from "react-router-dom";
 import { searchActionCreator } from "../../ActionCreator/productActionCreator";
 import { useDispatch } from "react-redux";
@@ -22,21 +21,10 @@ const Navbar = () => {
   const [showWishlist, setShowWishlist] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [searchInput, setSearchInput] = useState("");
-  const dispatch = useDispatch();
 
   const wishlistData = useSelector((storeData) => {
     return storeData.productReducer.wishlist;
   });
-  const cartData = useSelector((storeData) => {
-    return storeData.productReducer.cart;
-  });
-
-  const searchOnKeyPress = (e) => {
-    if (e.key == "Enter") {
-      let actionCreator = bindActionCreators(searchActionCreator, dispatch);
-      actionCreator(searchInput);
-    }
-  };
 
   return (
     <>
@@ -45,7 +33,7 @@ const Navbar = () => {
         <div className="nav-header">
           <div className="nav-title">
             <NavLink to="/">
-              <img src={myntraLogo} alt="logo" height="50px" />
+              <img src={myntraLogo} alt="logo" height="100px" />
             </NavLink>
           </div>
         </div>
@@ -75,7 +63,6 @@ const Navbar = () => {
               onChange={(e) => {
                 setSearchInput(e.target.value);
               }}
-              onKeyPress={searchOnKeyPress}
             />
           </div>
         </div>
@@ -108,13 +95,17 @@ const Navbar = () => {
                 setShowCart(!showCart);
               }}
             >
-              <FontAwesomeIcon icon={faBagShopping} className="font-color" />
-              <div>BAG {`${cartData?.length > 0 ? cartData.length : ""}`} </div>
+              <NavLink
+                to={"/bag"}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <FontAwesomeIcon icon={faBagShopping} className="font-color" />
+                <div>BAG</div>
+              </NavLink>
             </div>
           </div>
         </div>
         {showWishlist && <Modal />}
-        {showCart && <Cart />}
       </div>
     </>
   );
