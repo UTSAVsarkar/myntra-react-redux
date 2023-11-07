@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/myntra-react-redux/static/css/main.70fcd4a3.css",
-    "main.js": "/myntra-react-redux/static/js/main.a3c6ecc8.js",
+    "main.css": "/myntra-react-redux/static/css/main.5cd0b5c3.css",
+    "main.js": "/myntra-react-redux/static/js/main.efb5c074.js",
     "index.html": "/myntra-react-redux/index.html",
-    "main.70fcd4a3.css.map": "/myntra-react-redux/static/css/main.70fcd4a3.css.map",
-    "main.a3c6ecc8.js.map": "/myntra-react-redux/static/js/main.a3c6ecc8.js.map"
+    "main.5cd0b5c3.css.map": "/myntra-react-redux/static/css/main.5cd0b5c3.css.map",
+    "main.efb5c074.js.map": "/myntra-react-redux/static/js/main.efb5c074.js.map"
   },
   "entrypoints": [
-    "static/css/main.70fcd4a3.css",
-    "static/js/main.a3c6ecc8.js"
+    "static/css/main.5cd0b5c3.css",
+    "static/js/main.efb5c074.js"
   ]
 }
