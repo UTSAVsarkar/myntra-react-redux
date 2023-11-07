@@ -1,4 +1,3 @@
-import { useState } from "react";
 export const productActionCreator = () => {
   return (dispatch, getState) => {
     const getElectronicData = () => {
