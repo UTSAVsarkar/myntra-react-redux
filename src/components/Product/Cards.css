@@ -10,13 +10,10 @@
 }
 .product-image {
 	border-radius: 5px;
-	width: 210px;
-	height: 280px;
+	width: 250px;
+	height: 300px;
 }
-.product-image:hover{
-	transform: scale(1.1);
-	opacity: 0.5;
-}
+
 .text {
 	background-color: #f408b5;
 	color: rgb(255, 255, 255);
