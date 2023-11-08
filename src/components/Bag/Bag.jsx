@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
 import Item from "../Product/Item";
+import FinalAmount from "./FInalAmount";
+import "./Bag.css";
 
 const Bag = () => {
   const bagItemIds = useSelector((store) => store.bag);
@@ -10,13 +12,24 @@ const Bag = () => {
   });
 
   return (
-    <div className="container left-content-border">
-      <div className="right-content">
-        {productData.map((value) => {
-          return <Item item={value} key={value.id} />;
-        })}
-      </div>
-    </div>
+    <>
+      {productData.length === 0 ? (
+        <center style={{ margin: 200 }}>
+          <h1>No Item Selected!</h1>
+        </center>
+      ) : (
+        <main>
+          <div className="bag-page">
+            <div className="bag-items-container">
+              {productData.map((value) => {
+                return <Item item={value} key={value.id} />;
+              })}
+            </div>
+            <FinalAmount />
+          </div>
+        </main>
+      )}
+    </>
   );
 };
 
