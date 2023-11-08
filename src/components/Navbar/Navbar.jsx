@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="nav-header">
           <div className="nav-title">
             <NavLink to="/">
-              <img src={myntraLogo} alt="logo" height="80px" />
+              <img src={myntraLogo} alt="logo" height="50px" />
             </NavLink>
           </div>
         </div>
