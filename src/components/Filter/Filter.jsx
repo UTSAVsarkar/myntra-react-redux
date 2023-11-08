@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../helper.css";
 import style from "./Filter.css";
-import Pdata from "../Product/Pdata";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { filterActionCreator } from "../../ActionCreator/productActionCreator";
 import { filterCatActionCreator } from "../../ActionCreator/productActionCreator";
-import { filterGenderActionCreator } from "../../ActionCreator/productActionCreator";
 
 const Filter = () => {
-  const [brands, setBrands] = useState([]);
-  const [categories, setCategories] = useState([]);
   const dispatch = useDispatch();
 
   return (

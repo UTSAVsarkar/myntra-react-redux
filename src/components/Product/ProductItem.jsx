@@ -1,6 +1,6 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBox } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { productActionCreator } from "../../ActionCreator/productActionCreator";
@@ -54,12 +54,8 @@ const ProductItem = () => {
                             dispatch
                           );
                           actionCreator(value);
-                          // eslint-disable-next-line no-unused-expressions
-
-                          alert("Product Added to Wishlist");
                         }}
                       >
-                        {" "}
                         {text ? "Aded to wishlist" : "wishlish"}{" "}
                       </button>
                     </div>

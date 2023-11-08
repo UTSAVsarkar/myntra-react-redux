@@ -9,18 +9,13 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
-import Modal from "../Product/Modal";
 import { NavLink } from "react-router-dom";
-import { searchActionCreator } from "../../ActionCreator/productActionCreator";
-import { useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
+import Cards from "../Product/Cards.css";
 
 const menu = ["Mens", "Womens", "Kids", "Home & Living", "Offer"];
 
 const Navbar = () => {
-  const [showWishlist, setShowWishlist] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const [searchInput, setSearchInput] = useState("");
 
   const wishlistData = useSelector((storeData) => {
     return storeData.productReducer.wishlist;
@@ -33,7 +28,7 @@ const Navbar = () => {
         <div className="nav-header">
           <div className="nav-title">
             <NavLink to="/">
-              <img src={myntraLogo} alt="logo" height="100px" />
+              <img src={myntraLogo} alt="logo" height="80px" />
             </NavLink>
           </div>
         </div>
@@ -61,7 +56,7 @@ const Navbar = () => {
               type="search"
               placeholder="Search for Products, brands and more..."
               onChange={(e) => {
-                setSearchInput(e.target.value);
+                console.log(e.target.value);
               }}
             />
           </div>
@@ -75,22 +70,14 @@ const Navbar = () => {
             </div>
 
             {/* Whishlist */}
-            <div
-              className="p-r-10"
-              onClick={() => {
-                setShowWishlist(!showWishlist);
-              }}
-            >
+            <div className="p-r-10">
               <FontAwesomeIcon icon={faHeart} className="font-color" />
-              <div>
-                WISHLIST{" "}
-                {`${wishlistData?.length > 0 ? wishlistData.length : ""}`}
-              </div>
+              <div>WISHLIST</div>
             </div>
 
             {/* Cart */}
             <div
-              className="p-r-10"
+              className="new-class"
               onClick={() => {
                 setShowCart(!showCart);
               }}
@@ -101,11 +88,11 @@ const Navbar = () => {
               >
                 <FontAwesomeIcon icon={faBagShopping} className="font-color" />
                 <div>BAG</div>
+                <span className="bag-item-count">0</span>
               </NavLink>
             </div>
           </div>
         </div>
-        {showWishlist && <Modal />}
       </div>
     </>
   );
