@@ -1,12 +1,10 @@
 import React from "react";
 import "../../helper.css";
 import ProductItem from "./ProductItem";
-import Filter from "../Filter/Filter";
 
 const Cards = () => {
   return (
     <>
-      <Filter />
       <ProductItem />
     </>
   );

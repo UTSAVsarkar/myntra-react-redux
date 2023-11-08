@@ -44,18 +44,11 @@ const Navbar = () => {
             ))}
           </div>
         </div>
-        <div className="nav-search">
-          <div className="border">
-            <FontAwesomeIcon icon={faSearch} className="font-color" />
-            <input
-              className="padding	"
-              type="search"
-              placeholder="Search for Products, brands and more..."
-              onChange={(e) => {
-                console.log(e.target.value);
-              }}
-            />
-          </div>
+        <div className="search_bar">
+          <input
+            className="search_input"
+            placeholder="Search for products, brands and more"
+          />
         </div>
         <div className="user-profile">
           <div className="flexed">
@@ -75,7 +68,11 @@ const Navbar = () => {
             <div className="new-class">
               <NavLink
                 to={"/bag"}
-                style={{ textDecoration: "none", color: "black" }}
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  marginTop: 10,
+                }}
               >
                 <FontAwesomeIcon icon={faBagShopping} className="font-color" />
                 <div>BAG</div>
