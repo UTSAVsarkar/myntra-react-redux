@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import Style from "./index.css";
-import { store } from "./ReduxStore/store"
 import { Provider } from "react-redux";
-import { HashRouter } from 'react-router-dom'
+import { HashRouter } from "react-router-dom";
+import myntraStore from "./store";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <HashRouter>
+  <HashRouter>
+    <Provider store={myntraStore}>
       <App />
-    </HashRouter>
-  </Provider>,
+    </Provider>
+  </HashRouter>,
 
   document.getElementById("root")
 );

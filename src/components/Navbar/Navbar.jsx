@@ -8,7 +8,6 @@ import {
   faUser,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Cards from "../Product/Cards.css";
 
@@ -16,10 +15,6 @@ const menu = ["Mens", "Womens", "Kids", "Home & Living", "Offer"];
 
 const Navbar = () => {
   const [showCart, setShowCart] = useState(false);
-
-  const wishlistData = useSelector((storeData) => {
-    return storeData.productReducer.wishlist;
-  });
 
   return (
     <>
