@@ -10,11 +10,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import Cards from "../Product/Cards.css";
+import { useSelector } from "react-redux";
 
 const menu = ["Mens", "Womens", "Kids", "Home & Living", "Offer"];
 
 const Navbar = () => {
-  const [showCart, setShowCart] = useState(false);
+  const bagItems = useSelector((store) => store.bag);
 
   return (
     <>
@@ -71,19 +72,14 @@ const Navbar = () => {
             </div>
 
             {/* Cart */}
-            <div
-              className="new-class"
-              onClick={() => {
-                setShowCart(!showCart);
-              }}
-            >
+            <div className="new-class">
               <NavLink
                 to={"/bag"}
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <FontAwesomeIcon icon={faBagShopping} className="font-color" />
                 <div>BAG</div>
-                <span className="bag-item-count">0</span>
+                <span className="bag-item-count">{bagItems.length}</span>
               </NavLink>
             </div>
           </div>

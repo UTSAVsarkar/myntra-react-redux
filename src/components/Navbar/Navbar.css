@@ -242,12 +242,11 @@ body {
   text-align: center;
   line-height: 18px;
   padding: 0 6px;
-  height: 18px;
   position: relative;
   border-radius: 50%;
   color: #fff;
   left: 13px;
-  top: -44px;
+  top: -60px;
   font-weight: 700;
   cursor: pointer;
 }
